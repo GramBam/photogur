@@ -23,14 +23,6 @@ class PicturesController < ApplicationController
     end
   end
 
-
-    #render  text: "Saving a picture. URL: #{params[:url]}, Title: #{params[:title]}, Artist: #{params[:artist]}"
-  private
-
-  def picture_params
-    params.require(:picture).permit(:artist, :title, :url)
-  end
-
   def edit
     @picture = Picture.find(params[:id])
   end
@@ -52,6 +44,14 @@ class PicturesController < ApplicationController
   end
 
 
+    #render  text: "Saving a picture. URL: #{params[:url]}, Title: #{params[:title]}, Artist: #{params[:artist]}"
+  private
+
+  def picture_params
+    params.require(:picture).permit(:artist, :title, :url)
+  end
+
+  
 
 
 

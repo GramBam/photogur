@@ -1,21 +1,20 @@
 Rails.application.routes.draw do
 
   root 'pictures#index'
-  get 'pictures' => 'pictures#index'
+  #get 'pictures' => 'pictures#index'
 
-  get 'pictures'=> 'pictures#index'
+#  get 'pictures'=> 'pictures#index'
+#
+#  post 'pictures' => 'pictures#create'
+#  get 'pictures/new' => 'pictures#new'
+#
+#  get 'pictures/:id/edit' => "pictures#edit", as: "edit_picture"
+#  patch 'pictures/:id' => "pictures#update"
+#
+  delete 'picture/:id' => 'picutures#destroy', as: "delete_picture"
+#
+#
+#  get 'pictures/:id' => 'pictures#show', as: 'picture'
 
-  post 'pictures' => 'pictures#create'
-  get 'pictures/new' => 'pictures#new'
-
-  get 'pictures/:id/edit' => "pictures#edit", as: "edit_picture"
-  patch 'pictures/:id' => "pictures#update"
-
-  delete 'picture/:id' => 'pictures#destroy', as: "delete_picture"
-
-  root 'pictures#index'
-
-
-  get 'pictures/:id' => 'pictures#show', as: 'picture'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :pictures
 end
